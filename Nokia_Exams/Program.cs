@@ -330,7 +330,7 @@ namespace Nokia_Exams
             }
             return grades;
         }
-        public static void Fizzbuzz(int n)
+        public static void fizzbuzz(int n)
         {
 
             string strX = "";
@@ -485,12 +485,15 @@ namespace Nokia_Exams
                 minimum += Convert.ToInt64(arr[i]);
             }
             Console.WriteLine("{0} {1}", minimum, max);
-            //FROM OTHER DEVS  didnt pass other test case 
-            //// string[] arr_temp = Console.ReadLine().Split(' ');
-            //long[] arr = Array.ConvertAll(arr_temp, Int64.Parse);
-            //long minSum = arr.Sum() - arr.Max();
-            //long maxSum = arr.Sum() - arr.Min();
-            //Console.WriteLine("{0} {1}", minSum, maxSum);
-        }
+            }
+        //FROM OTHER DEVS  didnt pass other test case 
+        //// string[] arr_temp = Console.ReadLine().Split(' ');
+        //long[] arr = Array.ConvertAll(arr_temp, Int64.Parse);
+        //long minSum = arr.Sum() - arr.Max();
+        //long maxSum = arr.Sum() - arr.Min();
+        //Console.WriteLine("{0} {1}", minSum, maxSum);
+    }
+
+}
     }
 }
