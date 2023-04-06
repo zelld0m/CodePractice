@@ -492,8 +492,6 @@ namespace Nokia_Exams
         //long minSum = arr.Sum() - arr.Max();
         //long maxSum = arr.Sum() - arr.Min();
         //Console.WriteLine("{0} {1}", minSum, maxSum);
-    }
-
-}
+    
     }
 }
