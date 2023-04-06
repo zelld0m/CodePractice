@@ -298,7 +298,7 @@ namespace Nokia_Exams
 
             return distinctArray;
         }
-        public static int Countvalley(int steps, string path)
+        public static int countvalley(int steps, string path)
         {
             int start = 2;
             char[] pathchar = path.ToCharArray();
@@ -317,7 +317,7 @@ namespace Nokia_Exams
 
             return start;
         }
-        public static List<int> GradingStudents(List<int> grades)
+        public static List<int> gradingStudents(List<int> grades)
         {
             List<int> newgrade = new List<int>();
             for (int i = 0; i < grades.Count(); i++)
@@ -485,98 +485,12 @@ namespace Nokia_Exams
                 minimum += Convert.ToInt64(arr[i]);
             }
             Console.WriteLine("{0} {1}", minimum, max);
-        }
-        public static List<int> FindMaxSum(List<int> InputList)
-        {
-            List<int> result = new List<int>();
-            List<int> result2 = new List<int>();
-            int max = 0;
-            int Secondndmax = 0;
-            for (int i = 0; i <= InputList.Count - 1; i++)
-            {
-
-                if (InputList[i] > InputList[i + 1])
-                {
-                    result.Add(InputList[i]);
-                    max = InputList[i];
-                }
-
-            }
-            result.Add(max);
-            result.Add(Secondndmax);
-            return result;
-        }
-        public static string[] UniqueNames(string[] names1, string[] names2)
-        {
-            string[] totalNames = names1.Concat(names2).ToArray();
-            string[] distinctArray = totalNames.Distinct().ToArray(); ;
-            
-            return distinctArray;
-        }
-        public static int countvalley(int steps,string path)
-        {
-            int start = 2;
-            char[] pathchar = path.ToCharArray();
-
-            for (int i = 0; i <= steps - 1; i++)
-            {
-                if (pathchar[i] == 'U' && start < 3)
-                {
-                    start++;
-                }
-                else if (pathchar[i] == 'D' && start !=0)
-                {
-                    start--;
-                }
-            }
-
-            return start;
-        }
-        public static List<int> gradingStudents(List<int> grades)
-        {
-            List<int> newgrade = new List<int>();
-            for (int i = 0; i < grades.Count(); i++)
-            {
-                var divideTemp = grades[i] % 5;
-                if (5 - divideTemp < 3 && grades[i] >= 38)
-                {
-                    grades[i] += 5 - divideTemp;
-                }
-            }
-            return grades;
-        }
-        public static void Fizzbuzz( int n)
-        {
-
-            string strX = "";
-            for (int i = 1; i <= n; i++)
-            {
-                if ((i % 3) == 0 && (i % 5) == 0)
-                {
-                    strX = "FizzBuzz";
-                }
-                else if ((i % 3) == 0 && (i % 5) != 0)
-                {
-                    strX = "Fizz";
-                }
-                else if ((i % 3) != 0 && (i % 5) == 0)
-                {
-                    strX = "Buzz";
-                }
-                else strX = Convert.ToString(i);
-                //3&5  FizzBuzz
-                //3   NOT 5  Fizz
-                //5   NOT 3  Buzz 
-                // not 3 and 5    return i 
-                Console.WriteLine(strX);
-            } 
             //FROM OTHER DEVS  didnt pass other test case 
             //// string[] arr_temp = Console.ReadLine().Split(' ');
             //long[] arr = Array.ConvertAll(arr_temp, Int64.Parse);
             //long minSum = arr.Sum() - arr.Max();
             //long maxSum = arr.Sum() - arr.Min();
             //Console.WriteLine("{0} {1}", minSum, maxSum);
-
         }
     }
 }
