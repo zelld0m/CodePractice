@@ -17,7 +17,7 @@ namespace Nokia_Exams
         public static void Testrun()
         {
 
-
+            #region Test
             //string[] names1 = new string[] { "Ava", "Emma", "Olivia" };
             //string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
             //Console.WriteLine(string.Join(", ", UniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
@@ -42,13 +42,27 @@ namespace Nokia_Exams
             //ChangingValue();
             //Console.WriteLine( AddSumOfDigits(12956));
             //FindMostUsed("HELLO");
-
+            #endregion Test
+            #region Hackkerrank
             //countvalley(8, "UDDDUDUU");
             //gradingStudents(list);
-            fizzbuzz(5);
+            //fizzbuzz(5);
+            //diagonalDifference(/*jioasdjs*/);
+            List<int> list = new List<int>();
+            list.Add(1);
+            list.Add(23);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+            
+            //plusMinus(list);
+            //staircase(10);
+            miniMaxSum(list);
+            #endregion Hackerrank
+
             Console.Read();
         }
-
+        #region Random Exams
         public static void Multiplicationtable(int size)
         {
             int value = 0;
@@ -254,6 +268,9 @@ namespace Nokia_Exams
             }
             return numbers;
         }
+        #endregion Random exams
+
+        #region hackerrank
         public static List<int> FindMaxSum(List<int> InputList)
         {
             List<int> result = new List<int>();
@@ -278,10 +295,10 @@ namespace Nokia_Exams
         {
             string[] totalNames = names1.Concat(names2).ToArray();
             string[] distinctArray = totalNames.Distinct().ToArray(); ;
-            
+
             return distinctArray;
         }
-        public static int countvalley(int steps,string path)
+        public static int countvalley(int steps, string path)
         {
             int start = 2;
             char[] pathchar = path.ToCharArray();
@@ -292,7 +309,7 @@ namespace Nokia_Exams
                 {
                     start++;
                 }
-                else if (pathchar[i] == 'D' && start !=0)
+                else if (pathchar[i] == 'D' && start != 0)
                 {
                     start--;
                 }
@@ -338,6 +355,144 @@ namespace Nokia_Exams
                 // not 3 and 5    return i 
                 Console.WriteLine(strX);
             }
+        }
+        public static void crewsort(List<int> crew_id, List<int> job_id)
+        {
+            long cost = 0;
+            crew_id.Sort();
+            job_id.Sort();
+            int len1 = crew_id.Count;
+
+            int len2 = job_id.Count;
+
+            if (len1 == len2)
+
+            {
+
+                for (int i = 0; i < len1; i++)
+
+                {
+
+                    if (job_id[i] >= crew_id[i])
+
+                    {
+
+                        cost = cost + (job_id[i] - crew_id[i]);
+
+                    }
+
+                    else if (job_id[i] < crew_id[i])
+
+                    {
+
+                        cost = cost + (crew_id[i] - job_id[i]);
+
+                    }
+
+                }
+
+            };
+
+
+        }
+        public static int diagonalDifference(List<List<int>> arr)
+        {
+            int x = 0;
+
+            int diag1 = 0;
+            int diag2 = 0;
+            int store = 0;
+            for (int i = 0; i <= arr.Count - 1; i++)
+            {
+                diag1 += i;
+            }
+            return diag1;
+        }
+        public static void plusMinus(List<int> arr)
+        {
+            //determine the positive numbers and size
+            int listcount = arr.Count;
+            decimal dTotal = 0;
+            int positive = 0;
+            int negative = 0;
+            int zero = 0;
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+                if (arr[i] > 0)
+                {
+                    positive += 1;
+                }
+                else if (arr[i] < 0)
+                {
+                    negative += 1;
+                }
+                else if (arr[i] ==0)
+                {
+                    zero++;
+                }
+                
+            }
+            result.Add(positive);
+            result.Add(negative);
+            result.Add(zero);
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                dTotal = Convert.ToDecimal(result[i]) / Convert.ToDecimal(listcount);
+                Console.WriteLine(dTotal.ToString("N6"));
+            }
+
+        }
+        #endregion Hackerrank
+        public static void staircase(int n)
+        {
+            
+            for (int i = 1; i <= n; i++)
+            {
+                var spaces = new String(' ', n - i);
+                var hashes = new String('#', i);
+                Console.WriteLine (spaces + hashes);
+            }
+        }
+        public static void miniMaxSum(List<int> arr)
+        {
+            //sort the minimum value 
+            //place it on an array
+            List<int> sorted = new List<int>();
+            Int64 minimum = 0;
+            Int64 max = 0;
+            int holdNumber = 0;
+            for (int i = 0; i < arr.Count; i++)
+            {
+                for (int secondHolderNumber = 0; secondHolderNumber < arr.Count - 1; secondHolderNumber++)
+                {
+                    if (arr[secondHolderNumber] > arr[secondHolderNumber + 1])
+                    {
+                        holdNumber = arr[secondHolderNumber + 1];
+                        arr[secondHolderNumber + 1] = arr[secondHolderNumber];
+                        arr[secondHolderNumber] = holdNumber;
+                    }
+                }
+            }
+            for (int i = arr.Count - 1; i > 0; i--)
+            {
+                max += Convert.ToInt64( arr[i]);
+            }
+            for (int i = 0; i < arr.Count - 1; i++)
+            {
+                minimum += Convert.ToInt64( arr[i]);
+            }
+            Console.WriteLine("{0} {1}", minimum, max);
+
+            //FROM OTHER DEVS  didnt pass other test case 
+            //// string[] arr_temp = Console.ReadLine().Split(' ');
+            //long[] arr = Array.ConvertAll(arr_temp, Int64.Parse);
+            //long minSum = arr.Sum() - arr.Max();
+            //long maxSum = arr.Sum() - arr.Min();
+            //Console.WriteLine("{0} {1}", minSum, maxSum);
+
         }
     }
 }
