@@ -18,8 +18,13 @@ namespace Nokia_Exams
         {
 
 
+            //string[] names1 = new string[] { "Ava", "Emma", "Olivia" };
+            //string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
+            //Console.WriteLine(string.Join(", ", UniqueNames(names1, names2))); // should print Ava, Emma, Olivia, Sophia
+            //List<int> list = new List<int> { 5, 9, 2, 1, 3 };
+            //FindMaxSum(list);
             //OddNumberToarray(2, 5);
-            Console.WriteLine(OddNumberToarray(2, 4));
+            //Console.WriteLine(OddNumberToarray(2, 4));
             //List<int> numbers = new List<int>() { 1, 2, 5, 7, 8, 10 };
             //int x = 5;
             //string v = FindNumber(numbers, x);
@@ -37,6 +42,10 @@ namespace Nokia_Exams
             //ChangingValue();
             //Console.WriteLine( AddSumOfDigits(12956));
             //FindMostUsed("HELLO");
+
+            //countvalley(8, "UDDDUDUU");
+            //gradingStudents(list);
+            fizzbuzz(5);
             Console.Read();
         }
 
@@ -54,8 +63,6 @@ namespace Nokia_Exams
                 Console.WriteLine();
             }
         }
-
-
         public static void Multiplicationtable2(int size)
         {
             int value = 0;
@@ -69,7 +76,6 @@ namespace Nokia_Exams
                 Console.WriteLine();
             }
         }
-
         public static void Fabonacci()
         {
             int x = 0, y = 1;
@@ -100,7 +106,6 @@ namespace Nokia_Exams
             x = (numberToDetermine % 2 == 0) ? "EVEN" : "ODD";
             Console.WriteLine(x);
         }
-
         public static void BubbleSort()   //bubble sort 
         {
 
@@ -124,7 +129,6 @@ namespace Nokia_Exams
                 Console.WriteLine(listNumber[i] + ", ");
             }
         }
-
         public static void Palindrome() //palindrome
         {
             string word = "HELLO";
@@ -136,7 +140,6 @@ namespace Nokia_Exams
             Console.WriteLine(rev);
             Console.WriteLine(rev == word ? "PALINDROME" : "NOT PALINDROME");
         }
-
         public static void NumberToMonths(int numberToMonths) //numbertoMonths
         {
 
@@ -146,7 +149,6 @@ namespace Nokia_Exams
             Console.Write(display);
 
         }
-
         public static void ChangingValue()
         {
             int a = 10, b = 20;
@@ -158,7 +160,6 @@ namespace Nokia_Exams
             Console.WriteLine("A:" + a + "\t B:" + b);
 
         }
-
         public static int AddSumOfDigits(int num)   // Add the sum of Digits 
         {
             string snum = num.ToString();
@@ -179,7 +180,6 @@ namespace Nokia_Exams
 
             return total;
         }
-
         public static int FindMostUsed(int number)    // input  numbers then  find the most common used
         {
 
@@ -187,7 +187,6 @@ namespace Nokia_Exams
 
             return 1;
         }
-
         public static string FindMostUsed(string input)   // input number or letter find the most common used
         {// ERROR 
             char[] split = new char[50];
@@ -242,7 +241,6 @@ namespace Nokia_Exams
             }
             return x;
         }
-
         public static List<int> OddNumberToarray(int l, int r)  //HACKER RANK   
         {
             int x = 0;
@@ -256,9 +254,89 @@ namespace Nokia_Exams
             }
             return numbers;
         }
-    
+        public static List<int> FindMaxSum(List<int> InputList)
+        {
+            List<int> result = new List<int>();
+            List<int> result2 = new List<int>();
+            int max = 0;
+            int Secondndmax = 0;
+            for (int i = 0; i <= InputList.Count - 1; i++)
+            {
 
-        
-        //outputprime
+                if (InputList[i] > InputList[i + 1])
+                {
+                    result.Add(InputList[i]);
+                    max = InputList[i];
+                }
+
+            }
+            result.Add(max);
+            result.Add(Secondndmax);
+            return result;
+        }
+        public static string[] UniqueNames(string[] names1, string[] names2)
+        {
+            string[] totalNames = names1.Concat(names2).ToArray();
+            string[] distinctArray = totalNames.Distinct().ToArray(); ;
+            
+            return distinctArray;
+        }
+        public static int countvalley(int steps,string path)
+        {
+            int start = 2;
+            char[] pathchar = path.ToCharArray();
+
+            for (int i = 0; i <= steps - 1; i++)
+            {
+                if (pathchar[i] == 'U' && start < 3)
+                {
+                    start++;
+                }
+                else if (pathchar[i] == 'D' && start !=0)
+                {
+                    start--;
+                }
+            }
+
+            return start;
+        }
+        public static List<int> gradingStudents(List<int> grades)
+        {
+            List<int> newgrade = new List<int>();
+            for (int i = 0; i < grades.Count(); i++)
+            {
+                var divideTemp = grades[i] % 5;
+                if (5 - divideTemp < 3 && grades[i] >= 38)
+                {
+                    grades[i] += 5 - divideTemp;
+                }
+            }
+            return grades;
+        }
+        public static string fizzbuzz( int i )
+        {
+
+            string strX = "";
+            for (int i = 1; i <= n; i++)
+            {
+                if ((i % 3) == 0 && (i % 5) == 0)
+                {
+                    strX = "FizzBuzz";
+                }
+                else if ((i % 3) == 0 && (i % 5) != 0)
+                {
+                    strX = "Fizz";
+                }
+                else if ((i % 3) != 0 && (i % 5) == 0)
+                {
+                    strX = "Buzz";
+                }
+                else strX = Convert.ToString(i);
+                //3&5  FizzBuzz
+                //3   NOT 5  Fizz
+                //5   NOT 3  Buzz 
+                // not 3 and 5    return i 
+                Console.WriteLine(strX);
+            } 
     }
 }
