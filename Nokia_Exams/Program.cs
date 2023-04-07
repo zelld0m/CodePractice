@@ -48,16 +48,22 @@ namespace Nokia_Exams
             //gradingStudents(list);
             //fizzbuzz(5);
             //diagonalDifference(/*jioasdjs*/);
+            //plusMinus(list);
+            //staircase(10);
+            //miniMaxSum(list);
             List<int> list = new List<int>();
             list.Add(1);
             list.Add(23);
             list.Add(3);
             list.Add(4);
             list.Add(5);
-            
-            //plusMinus(list);
-            //staircase(10);
-            miniMaxSum(list);
+            list.Add(4);
+            list.Add(4);
+            list.Add(23);
+            list.Add(19);
+            list.Add(19);
+            list.Add(19);
+            birthdayCakeCandles(list);
             #endregion Hackerrank
 
             Console.Read();
@@ -428,11 +434,11 @@ namespace Nokia_Exams
                 {
                     negative += 1;
                 }
-                else if (arr[i] ==0)
+                else if (arr[i] == 0)
                 {
                     zero++;
                 }
-                
+
             }
             result.Add(positive);
             result.Add(negative);
@@ -448,12 +454,12 @@ namespace Nokia_Exams
         #endregion Hackerrank
         public static void staircase(int n)
         {
-            
+
             for (int i = 1; i <= n; i++)
             {
                 var spaces = new String(' ', n - i);
                 var hashes = new String('#', i);
-                Console.WriteLine (spaces + hashes);
+                Console.WriteLine(spaces + hashes);
             }
         }
         public static void miniMaxSum(List<int> arr)
@@ -485,13 +491,24 @@ namespace Nokia_Exams
                 minimum += Convert.ToInt64(arr[i]);
             }
             Console.WriteLine("{0} {1}", minimum, max);
+        }
+        public static int birthdayCakeCandles(List<int> candles)
+        {
+            int nMaxHeight = 0;
+            int maxHeight = candles.Max();
+            for (int i = 0; i < candles.Count; i++)
+            {
+                if (maxHeight == candles[i])
+                {
+                    nMaxHeight ++;
+                }
+                
             }
-        //FROM OTHER DEVS  didnt pass other test case 
-        //// string[] arr_temp = Console.ReadLine().Split(' ');
-        //long[] arr = Array.ConvertAll(arr_temp, Int64.Parse);
-        //long minSum = arr.Sum() - arr.Max();
-        //long maxSum = arr.Sum() - arr.Min();
-        //Console.WriteLine("{0} {1}", minSum, maxSum);
+            return nMaxHeight;
+        }
+
+
+        
     
     }
 }
