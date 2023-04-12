@@ -224,5 +224,37 @@ namespace Nokia_Exams
             string x = d.ToString("HH:mm:ss");
             return x;
         }
+        public int median(List<int> arr) 
+        {
+            int holdNumber = 0;
+            int size = arr.Count;
+            int mid = size / 2;
+            List<int> arr2 = arr;
+            arr2.Sort();
+        
+            if (size % 2 != 0)
+            {
+                return arr[mid];
+            }
+            else
+            {
+                int value1 = arr[mid];
+                int value2 = arr[mid - 1];
+                return (value1 + value2) / 2;
+
+            }
+        }
+        public int lonelyInteger(List<int> a)
+        {
+            var numberGroups = a.GroupBy(i => i);
+            foreach (var grp in numberGroups)
+            {
+                if (grp.Count() == 1)
+                {
+                    return grp.Key;
+                }
+            }
+            return 0;
+        }
     }
 }

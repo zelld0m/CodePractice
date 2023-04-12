@@ -52,23 +52,37 @@ namespace Nokia_Exams
             //plusMinus(list);
             //staircase(10);
             //miniMaxSum(list);
+            #endregion Hackerrank
             List<int> list = new List<int>();
             list.Add(1);
-            list.Add(23);
-            list.Add(3);
+            list.Add(2);
+            list.Add(8);
             list.Add(4);
+            list.Add(3);
+            list.Add(6);
+            list.Add(7);
+            list.Add(1);
+            list.Add(9);
+            list.Add(10);
+            list.Add(11);
+            list.Add(11);
+            list.Add(3);
+            list.Add(2);
             list.Add(5);
             list.Add(4);
-            list.Add(4);
-            list.Add(23);
-            list.Add(19);
-            list.Add(19);
-            list.Add(19);
+            list.Add(3);
+            list.Add(6);
+            list.Add(7);
+            list.Add(1);
+            list.Add(9);
+            list.Add(10);
+            list.Add(11);
+            list.Add(11);
             //birthdayCakeCandles(list);
-            #endregion Hackerrank
+
             HackerRank hackerRank = new HackerRank();
-            hackerRank.FindMaxSum(list);
-            Console.Read();
+            hackerRank.lonelyinteger(list);
+        
         }
     }
 }
