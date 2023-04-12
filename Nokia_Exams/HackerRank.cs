@@ -111,7 +111,7 @@ namespace Nokia_Exams
                         cost = cost + (crew_id[i] - job_id[i]);
                     }
                 }
-            };
+            }
         }
         public int diagonalDifference(List<List<int>> arr)
         {
@@ -217,6 +217,12 @@ namespace Nokia_Exams
 
             }
             return nMaxHeight;
+        }
+        public string timeConversion(string s)
+        {
+            DateTime d = DateTime.Parse(s);
+            string x = d.ToString("HH:mm:ss");
+            return x;
         }
     }
 }
