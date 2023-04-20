@@ -283,5 +283,29 @@ namespace Nokia_Exams
 
             return result;
         }
+        public static int beautifulDays(int i, int j, int k)
+        {
+            var reverseNumber = "";
+            int number = 0;
+            var tempNumber = 0;
+            int beautifulDay = 0;
+            for (i = i; i <= j; i++)
+            {
+                tempNumber = i;
+                reverseNumber = "";
+                while (tempNumber > 0)
+                {
+                    number = tempNumber % 10;
+                    tempNumber = tempNumber / 10;
+                    var deneme = number.ToString();
+                    reverseNumber += deneme;
+                }
+                var convertedNumber = Convert.ToInt32(reverseNumber);
+                var lastNumber = i - convertedNumber;
+                if (lastNumber % k == 0)
+                    beautifulDay++;
+            }
+            return beautifulDay;
+        }
     }
 }
