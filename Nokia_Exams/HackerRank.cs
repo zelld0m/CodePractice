@@ -256,5 +256,32 @@ namespace Nokia_Exams
             }
             return 0;
         }
+        public static List<int> compareTriplets(List<int> a, List<int> b)
+        {
+            //a0 b0
+            //a1 b1
+            //a2 b2
+            //If a[i] > b[i], then Alice is awarded 1 point.
+            //If a[i] < b[i], then Bob is awarded 1 point.
+            //If a[i] = b[i], then neither person receives a point.
+            List<int> result = new List<int>();
+            int alice = 0;
+            int bob = 0;
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (a[i] > b[i])
+                {
+                    alice++;
+                }
+                else if (b[i] > a[i])
+                {
+                    bob++;
+                }
+            }
+            result.Add(alice);
+            result.Add(bob);
+
+            return result;
+        }
     }
 }

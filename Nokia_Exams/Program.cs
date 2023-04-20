@@ -81,7 +81,7 @@ namespace Nokia_Exams
             //birthdayCakeCandles(list);
 
             HackerRank hackerRank = new HackerRank();
-            hackerRank.lonelyinteger(list);
+            hackerRank.lonelyInteger(list);
         
         }
     }
