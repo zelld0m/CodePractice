@@ -213,6 +213,48 @@ namespace Nokia_Exams
             }
             return numbers;
         }
-        
+
+        public void multiplierTable()
+        {
+         
+            double hold = 0;
+
+            for (double i = 1; i < 7;i++)
+            {
+                for (double j = 1; j < 6; j++)
+                {
+                    if (j == 1 && i==1 && hold ==0)
+                    {
+                        hold = j * i;
+                        Console.Write(hold + "     "); 
+                    }   
+                    else if (hold==0 && i>=2)  // activate when reset
+                    {
+                        hold = 1; 
+                        hold = hold * i;
+                        Console.Write(hold + "     "); 
+                    }
+                    else // j > 2
+                    {
+                        i++;
+                        hold = (hold * i);
+                        Console.Write(hold + "     "); // activate on reset hold = j*i
+                        i--;
+                    }
+                    
+                }
+                Console.WriteLine();
+                hold = 0;
+            }
+        }
+        private  int CalculatePower(int number, int powerOf)
+        {
+            int result = number;
+            for (int i = 2; i <= powerOf; i++)
+                result *= number;
+            return result;
+        }
+
+
     }
 }

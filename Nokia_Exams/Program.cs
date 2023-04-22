@@ -12,6 +12,7 @@ namespace Nokia_Exams
         static void Main(string[] args)
         {
             Testrun();
+            Console.ReadLine();
         }
 
         public static void Testrun()
@@ -80,9 +81,10 @@ namespace Nokia_Exams
             list.Add(11);
             //birthdayCakeCandles(list);
 
-            HackerRank hackerRank = new HackerRank();
-            hackerRank.lonelyInteger(list);
-        
+            //HackerRank hackerRank = new HackerRank();
+            //hackerRank.lonelyInteger(list);
+            RandomProblem randomProblemTestrun = new RandomProblem();
+            randomProblemTestrun.multiplierTable();
         }
     }
 }
