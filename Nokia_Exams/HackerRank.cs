@@ -307,5 +307,30 @@ namespace Nokia_Exams
             }
             return beautifulDay;
         }
+
+        public int getTotalX(List<int> a,List<int> b)
+        {
+            int total = 0;
+
+
+            for (int i = 0; i < a.Count ; i++)
+            {
+                if (a[i] % 2 == 0)
+                {
+
+                } 
+            }
+            return total;
+        }
+        public static List<int> countingSort(List<int> arr)
+        {
+
+            var fa = new int[100];
+            foreach (var n in arr)
+            { //can check if v is in range.
+                fa[n] += 1;
+            }
+            return fa.ToList();
+        }
     }
 }

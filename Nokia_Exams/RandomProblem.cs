@@ -65,7 +65,7 @@ namespace Nokia_Exams
             x = (numberToDetermine % 2 == 0) ? "EVEN" : "ODD";
             Console.WriteLine(x);
         }
-        public static void BubbleSort()   //bubble sort 
+        public  void BubbleSort()   //bubble sort 
         {
 
             int[] listNumber = { 5, 1, 3, 13, 134, 12, 13, 4, 122, 145, 1156 };

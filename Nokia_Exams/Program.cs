@@ -84,7 +84,7 @@ namespace Nokia_Exams
             //HackerRank hackerRank = new HackerRank();
             //hackerRank.lonelyInteger(list);
             RandomProblem randomProblemTestrun = new RandomProblem();
-            randomProblemTestrun.multiplierTable();
+            randomProblemTestrun.BubbleSort();
         }
     }
 }
