@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -229,8 +230,7 @@ namespace Nokia_Exams
             int holdNumber = 0;
             int size = arr.Count;
             int mid = size / 2;
-            List<int> arr2 = arr;
-            arr2.Sort();
+            arr.Sort();
         
             if (size % 2 != 0)
             {
@@ -332,5 +332,6 @@ namespace Nokia_Exams
             }
             return fa.ToList();
         }
+        List<int> ulist = list1.Union(list2).ToList();
     }
 }
