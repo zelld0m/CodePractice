@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nokia_Exams
 {
@@ -65,7 +62,7 @@ namespace Nokia_Exams
             x = (numberToDetermine % 2 == 0) ? "EVEN" : "ODD";
             Console.WriteLine(x);
         }
-        public  void BubbleSort()   //bubble sort 
+        public void BubbleSort()   //bubble sort 
         {
 
             int[] listNumber = { 5, 1, 3, 13, 134, 12, 13, 4, 122, 145, 1156 };
@@ -216,23 +213,23 @@ namespace Nokia_Exams
 
         public void multiplierTable()
         {
-         
+
             double hold = 0;
 
-            for (double i = 1; i < 7;i++)
+            for (double i = 1; i < 7; i++)
             {
                 for (double j = 1; j < 6; j++)
                 {
-                    if (j == 1 && i==1 && hold ==0)
+                    if (j == 1 && i == 1 && hold == 0)
                     {
                         hold = j * i;
-                        Console.Write(hold + "     "); 
-                    }   
-                    else if (hold==0 && i>=2)  // activate when reset
+                        Console.Write(hold + "     ");
+                    }
+                    else if (hold == 0 && i >= 2)  // activate when reset
                     {
-                        hold = 1; 
+                        hold = 1;
                         hold = hold * i;
-                        Console.Write(hold + "     "); 
+                        Console.Write(hold + "     ");
                     }
                     else // j > 2
                     {
@@ -241,17 +238,24 @@ namespace Nokia_Exams
                         Console.Write(hold + "     "); // activate on reset hold = j*i
                         i--;
                     }
-                    
+
                 }
                 Console.WriteLine();
                 hold = 0;
             }
         }
-        private  int CalculatePower(int number, int powerOf)
+        private int CalculatePower(int number, int powerOf)
         {
             int result = number;
             for (int i = 2; i <= powerOf; i++)
                 result *= number;
+            return result;
+        }
+        private List<int> CalculatePower(int powerOf, int number, int x)
+        {
+            List<int> result = new List<int>();
+
+
             return result;
         }
 

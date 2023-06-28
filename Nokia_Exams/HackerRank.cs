@@ -332,6 +332,28 @@ namespace Nokia_Exams
             }
             return fa.ToList();
         }
-        List<int> ulist = list1.Union(list2).ToList();
+
+        public int closestNumber(List <int> arr)
+        {
+
+            /*-20 - 3916237 - 357920 - 3620601 7374819 - 7330761 30 6246457 - 6461594 266854 - 520 - 470*/
+            int x = 0;
+            arr.Add(-20);
+            arr.Add(- 3916237);
+            arr.Add(-357920);
+            arr.Add(7374819);
+            arr.Add(-7330761);
+            arr.Add(30);
+            arr.Add(6246457);
+            arr.Add(-6461594);
+            arr.Add(266854);
+            arr.Add(-520);
+            arr.Add(-470);
+
+            arr.Sort();
+
+            return x;
+        }
+       
     }
 }
