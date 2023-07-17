@@ -354,6 +354,49 @@ namespace Nokia_Exams
 
             return x;
         }
-       
+        public int countValueInArray(List<int> arr)
+        {
+            int x = 0;
+            x = arr.Count;
+
+            return x;
+        }
+
+        public static List<int> oddNumbers(int l, int r)
+        {
+            List<int> odds = new List<int>();
+
+            for (int i = l; i <= r; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    odds.Add(i);
+                }
+            }
+            return odds;
+        }
+
+        public static string findNumber(List<int> arr, int k)
+        {
+            String x = "No";
+
+            for (int i = 0; i < arr.Count; i++)
+            {
+
+                if (arr[i] == k)
+                {
+                    x = "YES";
+                    break;
+                }
+                else
+                {
+                    x = "NO";
+                }
+            }
+            return x;
+
+        }
+
     }
+  
 }

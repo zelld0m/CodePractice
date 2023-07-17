@@ -62,9 +62,16 @@ namespace Nokia_Exams
             //hackerRank.lonelyInteger(list);
             //RandomProblem randomProblemTestrun = new RandomProblem();
             //randomProblemTestrun.OddOrEven(2);
+            list.Add(0);
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            list.Add(4);
+            list.Add(5);
+            
 
-            //HackerRank hacker = new HackerRank();
-            //hacker.closestNumber(list);
+            HackerRank hacker = new HackerRank();
+            hacker.countValueInArray(list);
 
         }
     }
