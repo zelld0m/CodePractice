@@ -71,6 +71,7 @@ namespace Nokia_Exams
             
 
             HackerRank hacker = new HackerRank();
+            hacker.CompressString("TESSSSEEEETTTTT54444-5");
 
         }
     }

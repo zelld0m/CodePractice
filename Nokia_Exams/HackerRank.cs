@@ -362,7 +362,7 @@ namespace Nokia_Exams
             return x;
         }
 
-        public static List<int> oddNumbers(int l, int r)
+        public  List<int> oddNumbers(int l, int r)
         {
             List<int> odds = new List<int>();
 
@@ -376,7 +376,7 @@ namespace Nokia_Exams
             return odds;
         }
 
-        public static string findNumber(List<int> arr, int k)
+        public  string findNumber(List<int> arr, int k)
         {
             String x = "No";
 
@@ -397,11 +397,9 @@ namespace Nokia_Exams
 
         }
 
-        public static string CompressString(String str)
+        public  string CompressString(String str)
         {
-            Console.WriteLine("Hello, World!");
             string newX = string.Empty;
-            
             int count = 1;
             int charPos = 0;
 
@@ -440,8 +438,8 @@ namespace Nokia_Exams
 
                 }
             }
-            //Console.WriteLine(str);
-            //Console.WriteLine(newX);
+            Console.WriteLine(str);
+            Console.WriteLine(newX);
             return newX;
         }
     
