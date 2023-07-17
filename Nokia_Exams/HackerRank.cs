@@ -397,6 +397,55 @@ namespace Nokia_Exams
 
         }
 
+        public static string CompressString(String str)
+        {
+            Console.WriteLine("Hello, World!");
+            string newX = string.Empty;
+            
+            int count = 1;
+            int charPos = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ((charPos + 1) < str.Length)
+                {
+                    if (str[charPos] == str[charPos + 1])
+                    {
+                        count++;
+                        charPos++;
+                    }
+                    else if (count == 1)
+                    {
+                        newX += str[i];
+                        charPos++;
+                    }
+                    else
+                    {
+                        newX += str[i] + "" + count;
+                        count = 1;
+                        charPos++;
+                    }
+                }
+                else
+                {
+                    if (count == 1)
+                    {
+                        newX += str[i];
+                    }
+                    else
+                    {
+                        newX += str[i] + "" + count;
+                        count = 1;
+                    }
+
+                }
+            }
+            //Console.WriteLine(str);
+            //Console.WriteLine(newX);
+            return newX;
+        }
+    
+
     }
   
 }

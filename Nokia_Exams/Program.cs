@@ -71,7 +71,6 @@ namespace Nokia_Exams
             
 
             HackerRank hacker = new HackerRank();
-            hacker.countValueInArray(list);
 
         }
     }
