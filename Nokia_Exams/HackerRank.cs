@@ -227,7 +227,6 @@ namespace Nokia_Exams
         }
         public int median(List<int> arr) 
         {
-            int holdNumber = 0;
             int size = arr.Count;
             int mid = size / 2;
             arr.Sort();
@@ -289,7 +288,7 @@ namespace Nokia_Exams
             int number = 0;
             var tempNumber = 0;
             int beautifulDay = 0;
-            for (i = i; i <= j; i++)
+            for (i = 0; i <= j; i++)
             {
                 tempNumber = i;
                 reverseNumber = "";
@@ -442,7 +441,34 @@ namespace Nokia_Exams
             Console.WriteLine(newX);
             return newX;
         }
-    
+
+
+        public  int ComputeClosestToZero(int[] ts)
+        {
+            // Write your code here
+            // To debug: Console.Error.WriteLine("Debug messages...");
+            int nearest = 0;
+            for (int i = 0; i < ts.Count(); i++)
+            {
+                if (nearest == 0)
+                {
+                    nearest = ts[i];
+                }
+                else if (ts[i] > 0 && ts[i] <= Math.Abs(nearest))
+                {
+                    nearest = ts[i];
+                }
+                else if (ts[i] < 0 && - ts[i] < Math.Abs(nearest))
+                {
+                    nearest = ts[i];
+                }
+               
+            }
+            return nearest;
+        }
+
+     
+
 
     }
   

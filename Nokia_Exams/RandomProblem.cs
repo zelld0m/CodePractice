@@ -199,7 +199,6 @@ namespace Nokia_Exams
         }
         public static List<int> OddNumberToarray(int l, int r)  //HACKER RANK   
         {
-            int x = 0;
             List<int> numbers = new List<int>() { };
             for (int i = l; i <= r; i++)
             {
